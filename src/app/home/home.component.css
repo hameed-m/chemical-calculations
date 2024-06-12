@@ -1,17 +1,45 @@
-
-.calculator-card {
-    width: 80vw;
-    height: 10vh;
-    max-width: 600px;
-    max-height: 200px;
-    margin: 15px;
+.calculator-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    align-content: center;
-    text-align: center;
-    border-radius: 8px;
-    background-color: #f5f5f5;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    padding: 2rem;
+  }
+  
+  .calculator-heading {
+    color: #007bff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .calculator-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .calculator-card {
+    width: 250px;
+    margin: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: transform 0.2s ease-in-out; /* Add hover effect transition */    
+  }
+  
+  .calculator-card-link:hover .calculator-card {
+    transform: scale(1.02); /* Slight scale up on hover */
+  }
+  
+  .card-background {
+    background-color: #f0f9ff; /* Light azure-blue background */
+    height: 100%;
+    border-radius: 4px;
+  }
+  
+  .calculator-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }

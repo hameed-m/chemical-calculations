@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-tds',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatIconModule, CommonModule, FormsModule],
+  imports: [MatFormFieldModule, MatInputModule, MatIconModule, CommonModule, FormsModule, MatCardModule],
   templateUrl: './tds.component.html',
   styleUrl: './tds.component.css',
 })

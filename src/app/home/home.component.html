@@ -1,7 +1,19 @@
+<div class="calculator-container">
+  <h1 class="calculator-heading">Choose Your Calculator</h1>
 
-  <a href="{{ card.link }}" *ngFor="let card of cards">
-    <mat-card class="calculator-card">
-      <mat-card-title>{{ card.title }}</mat-card-title>
-      <!-- <mat-card-subtitle>{{ card.description }}</mat-card-subtitle> -->
-    </mat-card>
-  </a>
+  <div class="calculator-grid">
+    <div *ngFor="let card of cards" class="calculator-card">
+      <a [routerLink]="card.link" class="calculator-card-link">
+        <mat-card class="card-background">
+          <mat-card-header>
+            <mat-icon class="calculator-icon" color="primary">{{ card.icon }}</mat-icon>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content">
+            <p>{{ card.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+</div>
