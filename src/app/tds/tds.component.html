@@ -6,41 +6,42 @@
       <mat-card-title><h6>Input Values</h6></mat-card-title>
     </mat-card-header>
     <mat-card-content class="calculator-content">
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>W1 of the desh (g)</mat-label>
-        <input
-          [(ngModel)]="w1"
-          matInput
-          placeholder="Enter weight 1"
-          required
-          type="text"
-          inputmode="numeric"
-        />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>W2 of the desh (g)</mat-label>
-        <input
-          [(ngModel)]="w2"
-          matInput
-          placeholder="Enter weight 2"
-          required
-          type="text"
-          inputmode="numeric"
-        />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Vol. of the sample (ml)</mat-label>
-        <input
-          [(ngModel)]="vol"
-          matInput
-          placeholder="Enter volume"
-          required
-          type="number"
-          inputmode="numeric"
-        />
-      </mat-form-field>
+      <form (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="calculator-form-field">
+            <mat-label>W1 of the desh (g)</mat-label>
+            <input
+              [(ngModel)]="w1"
+              matInput
+              placeholder="Enter weight 1"
+              required
+              type="text"
+              inputmode="numeric"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="calculator-form-field">
+            <mat-label>W2 of the desh (g)</mat-label>
+            <input
+              [(ngModel)]="w2"
+              matInput
+              placeholder="Enter weight 2"
+              required
+              type="text"
+              inputmode="numeric"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="calculator-form-field">
+            <mat-label>Vol. of the sample (ml)</mat-label>
+            <input
+              [(ngModel)]="vol"
+              name="volume"
+              matInput
+              placeholder="Enter volume"
+              required
+              type="text"
+              inputmode="numeric"
+            />
+          </mat-form-field>
+      </form>
     </mat-card-content>
   </mat-card>
 

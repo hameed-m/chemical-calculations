@@ -38,4 +38,12 @@ export class TdsComponent {
   get tds_percent() {
     return this.tds_ppm / 1000;
   }
+
+  onSubmit() {
+    const inputElement: any = document.querySelector('input[name="volume"]');
+
+    if (inputElement) {
+      inputElement.blur();
+    }
+  }
 }
