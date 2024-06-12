@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class TdsComponent {
   w1: any = null;
   w2: any = null;
-  vol: any;
+  vol: any = 0;
 
   get diff() {
     return Math.abs(this.w1 - this.w2);
