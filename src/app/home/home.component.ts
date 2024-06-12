@@ -22,14 +22,12 @@ interface Card {
 })
 export class HomeComponent {
   cards: Card[] = [
-    { title: 'TDS', description: 'Card 1', link: '/tds', icon: "water" },
-    { title: 'TSS', description: 'Card 2', link: '/tss', icon: "water" },
-    { title: 'API & SG', description: 'Card 3', link: '/api-sg', icon: "water" },
-    { title: 'Particulare Contaminants', description: '', link: '/pc', icon: "water" },
-    { title: 'Sulfite', description: 'Card 2', link: '/sulfite', icon: "water" },
-    { title: 'Bulk Chemicals', description: 'Card 3', link: '/bulk-chemicals', icon: "water" },
-    { title: 'Sand in Crude', description: 'Card 3', link: '/sand-crude', icon: "water" },
-    // { title: 'Geochemicals', description: 'Card 3', link: '/geochemicals' },
-    // { title: 'Sand in Crude', description: 'Card 3', link: 'card-3' },
+    { title: 'TDS', description: 'Card 1', link: '/tds', icon: "science" },
+    { title: 'TSS', description: 'Card 2', link: '/tss', icon: "science" },
+    { title: 'API & SG', description: 'Card 3', link: '/api-sg', icon: "science" },
+    { title: 'Particulare Contaminants', description: '', link: '/pc', icon: "science" },
+    { title: 'Sulfite', description: 'Card 2', link: '/sulfite', icon: "science" },
+    { title: 'Bulk Chemicals', description: 'Card 3', link: '/bulk-chemicals', icon: "science" },
+    { title: 'Sand in Crude', description: 'Card 3', link: '/sand-crude', icon: "science" },
   ];
 }
