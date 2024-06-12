@@ -1,0 +1,17 @@
+
+.calculator-card {
+    width: 80vw;
+    height: 10vh;
+    max-width: 600px;
+    max-height: 200px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

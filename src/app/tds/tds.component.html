@@ -1,0 +1,40 @@
+<h2 style="text-align: center;">TDS</h2>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>W1 of the desh (g)</mat-label>
+    <input [(ngModel)]="w1" matInput placeholder="Placeholder" />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>W2 of the desh (g)</mat-label>
+    <input [(ngModel)]="w2"  matInput placeholder="Placeholder" />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Vol. of the sample (ml)</mat-label>
+    <input [(ngModel)]="vol"  matInput placeholder="Placeholder" />
+  </mat-form-field>
+</p>
+
+<h3 style="text-align: center;">Result</h3>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Diff of W2-W1</mat-label>
+    <input disabled="ture" matInput placeholder="Placeholder" value="{{diff}}" />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>TDS (ppm)</mat-label>
+    <input disabled="ture"  matInput placeholder="Placeholder" value="{{tds_ppm}}" />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>TDS (%)</mat-label>
+    <input disabled="ture"  matInput placeholder="Placeholder" value="{{tds_percent}}" />
+  </mat-form-field>
+</p>
+
