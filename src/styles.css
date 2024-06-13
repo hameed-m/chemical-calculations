@@ -15,6 +15,7 @@ body {
 }
 
 .calculator-heading {
+  font-size: 2rem;
   color: azure;
   text-align: center;
   margin: 0px 5px !important;
@@ -26,7 +27,7 @@ body {
   }
   
   .calculator-card {
-    width: 80vw;
+    width: 90vw;
     max-width: 400px;
     height: fit-content;
     margin: 1rem;
