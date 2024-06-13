@@ -1,59 +1,154 @@
 <div style="display: flex; justify-content: center; align-items: center">
-  <mat-icon [routerLink]="'/home'" style="border-radius: 25%; border: black 3px solid; margin: 0px 5px; cursor: pointer">arrow_back</mat-icon>
+  <mat-icon
+    [routerLink]="'/home'"
+    style="
+      border-radius: 25%;
+      border: black 3px solid;
+      margin: 0px 5px;
+      cursor: pointer;
+    "
+    >arrow_back</mat-icon
+  >
   <h2 class="calculator-heading">Bulk Chemicals</h2>
 </div>
 
 <div class="calculator-container">
-  <mat-card-title>
-    <h5>Acid Concentration</h5>
-  </mat-card-title>
   <mat-card class="calculator-card">
+    <mat-card-header>
+      <h5>Acid Concentration %</h5>
+    </mat-card-header>
     <h6 style="width: 85%; padding-top: 5%">Input Values</h6>
     <mat-card-content class="calculator-content">
       <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Volume of Titrant (ml)</mat-label>
+        <mat-label>Volume of NaOH</mat-label>
         <input
-          [(ngModel)]="vol_titrant"
+          [(ngModel)]="vol_naoh"
           matInput
-          placeholder="Enter volume of Titrant"
+          placeholder="Enter volume of NaOH"
           type="text"
           inputmode="numeric"
-          (blur)="formatInput($event, 'vol_titrant')"
+          (blur)="formatInput($event, 'vol_naoh')"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>Normality of KI.KIO</mat-label>
         <input
-          [(ngModel)]="nor_ki"
+          [(ngModel)]="nor_naoh"
           matInput
-          placeholder="Enter normality of KI.KIO"
+          placeholder="Enter normality of NaOH"
           type="text"
           inputmode="numeric"
-          (blur)="formatInput($event, 'nor_ki')"
+          (blur)="formatInput($event, 'nor_naoh')"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sample Volume (ml)</mat-label>
+        <mat-label>Weight of Sample (g)</mat-label>
         <input
-          [(ngModel)]="sample_vol"
+          [(ngModel)]="weight_sample1"
           matInput
           placeholder="Enter sample volume"
           type="text"
           inputmode="numeric"
-          (blur)="formatInput($event, 'sample_vol')"
+          (blur)="formatInput($event, 'weight_sample1')"
         />
       </mat-form-field>
       <h6 style="width: 85%">Result</h6>
       <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sulfure (ppm)</mat-label>
+        <mat-label>Acid Concentration %</mat-label>
+        <input [(ngModel)]="acid_concentration" matInput readonly />
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <h5>Ferric Chloride %</h5>
+    </mat-card-header>
+    <h6 style="width: 85%; padding-top: 5%">Input Values</h6>
+    <mat-card-content class="calculator-content">
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Volume of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label>
         <input
-          [(ngModel)]="sulfure"
+          [(ngModel)]="vol_naso"
           matInput
-          placeholder="Enter sulfure (ppm)"
           type="text"
           inputmode="numeric"
-          (blur)="formatInput($event, 'sulfure')"
+          (blur)="formatInput($event, 'vol_naso')"
         />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Normality of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label>
+        <input
+          [(ngModel)]="nor_naso"
+          matInput
+          type="text"
+          inputmode="numeric"
+          (blur)="formatInput($event, 'nor_naso')"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Weight of Sample (g)</mat-label>
+        <input
+          [(ngModel)]="weight_sample2"
+          matInput
+          placeholder="Enter sample volume"
+          type="text"
+          inputmode="numeric"
+          (blur)="formatInput($event, 'weight_sample2')"
+        />
+      </mat-form-field>
+      <h6 style="width: 85%">Result</h6>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Ferric Chloride %</mat-label>
+        <input [(ngModel)]="ferric_chloride" matInput readonly />
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <h5>Sodium Hypochlorite %</h5>
+    </mat-card-header>
+    <h6 style="width: 85%; padding-top: 5%">Input Values</h6>
+    <mat-card-content class="calculator-content">
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Tit. Volume for Sample (ml)</mat-label>
+        <input
+          [(ngModel)]="tit_vol"
+          matInput
+          type="text"
+          inputmode="numeric"
+          (blur)="formatInput($event, 'tit_vol')"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Normality of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label>
+        <input
+          [(ngModel)]="nor_naso2"
+          matInput
+          type="text"
+          inputmode="numeric"
+          (blur)="formatInput($event, 'nor_naso2')"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Weight of Sample (g)</mat-label>
+        <input
+          [(ngModel)]="sample_size"
+          matInput
+          type="text"
+          inputmode="numeric"
+          (blur)="formatInput($event, 'sample_size')"
+        />
+      </mat-form-field>
+      <h6 style="width: 85%">Result</h6>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Sodium Hypochlorite (ppm)</mat-label>
+        <input [(ngModel)]="sodium_hy_ppm" matInput readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Sodium Hypochlorite %</mat-label>
+        <input [(ngModel)]="sodium_hy_perc" matInput readonly />
       </mat-form-field>
     </mat-card-content>
   </mat-card>
