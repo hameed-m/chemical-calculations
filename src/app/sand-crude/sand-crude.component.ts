@@ -23,38 +23,34 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sand-crude.component.css'
 })
 export class SandCrudeComponent {
-  vol_titrant: any = null;
-  nor_ki: any = null;
-  sample_vol: any = null;
-  sulfure: any = null;
+  vol_sand1: any = null;
 
-  get sulfite() {
-    let sulfite = (this.vol_titrant * this.nor_ki * 40000) / this.sample_vol;
-    return sulfite.toString() === 'NaN' || sulfite.toString() === 'Infinity'
+  get sand_crude1() {
+    let sand_crude1 = (this.vol_sand1*138.9).toFixed(2);
+    return sand_crude1.toString() === 'NaN' || sand_crude1.toString() === 'Infinity'
       ? '0'
-      : sulfite;
+      : sand_crude1;
   }
 
-  get sulfite_icp() {
-    let sulfite_icp = (2.5*this.sulfure).toFixed(2);
-    return sulfite_icp.toString() === 'NaN' || sulfite_icp.toString() === 'Infinity'
+  vol_sand2: any = null;
+  vol_sample: any = null;
+
+  get sand_crude2() {
+    let sand_crude2 = ((this.vol_sand2*526)/this.vol_sample).toFixed(2);
+    return sand_crude2.toString() === 'NaN' || sand_crude2.toString() === 'Infinity'
       ? '0'
-      : sulfite_icp;
+      : sand_crude2;
   }
 
 
   formatInput(value: any, vari: any) {
-    if (vari == 'vol_titrant' && value.target.value != '') {
-      this.vol_titrant = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'nor_ki' && value.target.value != '') {
-      this.nor_ki = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'sample_vol' && value.target.value != '') {
-      this.sample_vol = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'sample_vol' && value.target.value != '') {
-      this.sample_vol = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'sulfure' && value.target.value != '') {
-      this.sulfure = parseFloat(value.target.value).toFixed(2);
-    }
+    if (vari == 'vol_sand1' && value.target.value != '') {
+      this.vol_sand1 = parseFloat(value.target.value).toFixed(5);
+    } else if (vari == 'vol_sand2' && value.target.value != '') {
+      this.vol_sand2 = parseFloat(value.target.value).toFixed(5);
+    } else if (vari == 'vol_sample' && value.target.value != '') {
+      this.vol_sample = parseFloat(value.target.value).toFixed(5);
+    } 
   }
 }
 
