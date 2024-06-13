@@ -1,44 +1,77 @@
 .cards-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.cards-heading {
+  font-size: 2rem;
+  font-weight: 450;
+  color: azure;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 80vw;
+  max-width: 400px;
+  height: 10vh;
+  max-height: 100px;
+  margin: 1vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  /* background: linear-gradient(to right, #123b9b, #422180); */
+  /* background: linear-gradient(45deg, #007e4b, #007fe3); */
+  /* color: white; */
+  background-color: azure;
+  display: inline-grid;
+  align-items: center;
+  color: black;
+}
+
+.card-link:hover .card {
+  transform: scale(1.02);
+}
+
+.card-icon {
+  font-size: 2rem;
+  padding-right: 1rem;
+  color: rgb(100, 1, 100);
+  outline-color: white;
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+}
+
+/* h1 {
+    color: #007acc;
+    margin-bottom: 20px;
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    gap: 20px;
   }
   
-  .cards-heading {
-    color: #007bff;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   }
-  
-  .cards-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .card {
-    width: 80vw;
-    max-width: 400px;
-    height: 10vh;
-    max-height: 100px;
-    margin: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    background-color: #f0f9ff;
-    display: inline-grid;
-    align-items: center;}
-  
-  .card-link:hover .card {
-    transform: scale(1.02);
-  }
-  
   .card-icon {
-    font-size: 2rem;
-    padding-right: 1rem;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007acc;
   }
-  
-  .card-content {
-    padding: 1rem;
-    display: flex;
-  }
+  .card-text {
+    color: #007acc;
+    font-size: 16px;
+    font-weight: bold;
+  } */

@@ -6,6 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-tds',
   standalone: true,
@@ -17,6 +19,7 @@ import { MatButton } from '@angular/material/button';
     FormsModule,
     MatCardModule,
     MatButton,
+    RouterLink
   ],
   templateUrl: './tds.component.html',
   styleUrl: './tds.component.css',

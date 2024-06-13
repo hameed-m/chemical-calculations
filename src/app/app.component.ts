@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { TssComponent } from './tss/tss.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -14,7 +15,8 @@ import { TssComponent } from './tss/tss.component';
     RouterOutlet,
     CommonModule,
     MatCardModule,
-    TssComponent
+    TssComponent,
+    MatIconModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

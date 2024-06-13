@@ -5,7 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-sulfite',
@@ -17,7 +16,6 @@ import { MatButton } from '@angular/material/button';
     CommonModule,
     FormsModule,
     MatCardModule,
-    MatButton,
   ],
   templateUrl: './sulfite.component.html',
   styleUrl: './sulfite.component.css'
