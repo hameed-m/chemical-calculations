@@ -24,7 +24,7 @@ import { MatButton } from '@angular/material/button';
 export class TdsComponent {
   w1: any = null;
   w2: any = null;
-  vol: any = 0;
+  vol: any = null;
   VirtualKeyboardPolicy: any;
 
   get diff() {

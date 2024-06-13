@@ -25,7 +25,7 @@ import { MatButton } from '@angular/material/button';
 export class TssComponent {
   w1: any = null;
   w2: any = null;
-  vol: any = 0;
+  vol: any = null;
 
   get diff() {
     let diff = Math.abs(this.w1 - this.w2).toFixed(5);

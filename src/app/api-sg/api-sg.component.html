@@ -1,1 +1,55 @@
-<p>api-sg works!</p>
+<h2 style="text-align: center; color: #007bff">API&SG Calculator</h2>
+
+<div class="calculator-container">
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <mat-card-title><h6>Input Values</h6></mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="calculator-content">
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Density of Crude (sample)</mat-label>
+        <input
+          [(ngModel)]="doc"
+          matInput
+          placeholder="Enter weight 1"
+          required
+          type="text"
+          inputmode="numeric"
+          (blur)="formatInput($event, 'doc')"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Density of Water 'fixed'</mat-label>
+        <input
+          [(ngModel)]="dow"
+          matInput
+          readonly
+          value="0.99902"
+        />
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <mat-card-title><h6>Results</h6></mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="calculator-content">
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>Spacific Gravity</mat-label>
+        <input readonly matInput placeholder="Placeholder" value="{{ sg }}" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="calculator-form-field">
+        <mat-label>API°</mat-label>
+        <input
+          readonly
+          matInput
+          placeholder="Placeholder"
+          value="{{ api }}"
+        />
+      </mat-form-field>
+
+    </mat-card-content>
+  </mat-card>
+</div>
