@@ -28,22 +28,26 @@ export class TdsComponent {
   VirtualKeyboardPolicy: any;
 
   get diff() {
-    return Math.abs(this.w1 - this.w2);
+    let diff = Math.abs(this.w1 - this.w2).toFixed(5);
+    return diff.toString()==='NaN' || diff.toString()==='Infinity' ? "0" : diff;
   }
 
   get tds_ppm() {
-    return (this.diff * 1000000) / this.vol;
+    let tds_ppm = parseFloat(((parseFloat(this.diff) * 1000000) / this.vol).toFixed(3));
+    return tds_ppm.toString()==='NaN' || tds_ppm.toString()==='Infinity' ? 0 : tds_ppm;
   }
 
   get tds_percent() {
-    return this.tds_ppm / 1000;
+    let tds_percent = parseFloat((this.tds_ppm / 1000).toFixed(2));
+    return tds_percent.toString()==='NaN' || tds_percent.toString()==='Infinity' ? 0 : tds_percent;
   }
 
-  onSubmit() {
-    const inputElement: any = document.querySelector('input[name="volume"]');
-
-    if (inputElement) {
-      inputElement.blur();
+  formatInput(value: any, vari: any) {
+    if(vari == 'w1' && value.target.value != '') {
+      this.w1 = parseFloat(value.target.value).toFixed(5);
+    } else if(vari == 'w2' && value.target.value != '') {
+      this.w2 = parseFloat(value.target.value).toFixed(5);
     }
   }
+
 }
