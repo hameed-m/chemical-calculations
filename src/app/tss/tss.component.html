@@ -30,7 +30,7 @@
           (blur)="formatInput($event, 'w1')"
         />
         @if (w1) {
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="w1 = ''">
+        <button tabindex="-1" matSuffix mat-icon-button aria-label="Clear" (click)="w1 = ''">
           <mat-icon>close</mat-icon>
         </button>
         }
@@ -47,7 +47,7 @@
           (blur)="formatInput($event, 'w2')"
         />
         @if (w2) {
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="w2 = ''">
+        <button tabindex="-1" matSuffix mat-icon-button aria-label="Clear" (click)="w2 = ''">
           <mat-icon>close</mat-icon>
         </button>
         }
@@ -65,7 +65,7 @@
           (blur)="formatInput($event, 'vol')"
         />
         @if (vol) {
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="vol = ''">
+        <button tabindex="-1" matSuffix mat-icon-button aria-label="Clear" (click)="vol = ''">
           <mat-icon>close</mat-icon>
         </button>
         }

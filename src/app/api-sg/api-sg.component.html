@@ -21,7 +21,7 @@
           (blur)="formatInput($event, 'doc')"
         />
         @if(doc){
-          <button matSuffix mat-icon-button aria-label="Clear" (click)="doc = ''">
+          <button tabindex="-1" matSuffix mat-icon-button aria-label="Clear" (click)="doc = ''">
             <mat-icon>close</mat-icon>
           </button>
           }

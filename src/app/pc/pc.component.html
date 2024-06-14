@@ -31,7 +31,7 @@
           (blur)="formatInput($event, 'w1_up')"
         />
         @if(w1_up){
-        <button
+        <button tabindex="-1"
           matSuffix
           mat-icon-button
           aria-label="Clear"
@@ -53,7 +53,7 @@
           (blur)="formatInput($event, 'w2_up')"
         />
         @if(w2_up){
-        <button
+        <button tabindex="-1"
           matSuffix
           mat-icon-button
           aria-label="Clear"
@@ -76,7 +76,7 @@
           (blur)="formatInput($event, 'w1_down')"
         />
         @if(w1_down){
-        <button
+        <button tabindex="-1"
           matSuffix
           mat-icon-button
           aria-label="Clear"
@@ -98,7 +98,7 @@
           (blur)="formatInput($event, 'w2_down')"
         />
         @if(w2_down){
-        <button
+        <button tabindex="-1"
           matSuffix
           mat-icon-button
           aria-label="Clear"
@@ -121,7 +121,7 @@
           (blur)="formatInput($event, 'vol')"
         />
         @if(vol){
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="vol = ''">
+        <button tabindex="-1" matSuffix mat-icon-button aria-label="Clear" (click)="vol = ''">
           <mat-icon>close</mat-icon>
         </button>
         }
