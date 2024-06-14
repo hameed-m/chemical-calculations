@@ -29,6 +29,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'vol_naoh')"
         />
+        @if(vol_naoh){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="vol_naoh = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>Normality of KI.KIO</mat-label>
@@ -40,6 +50,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'nor_naoh')"
         />
+        @if(nor_naoh){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="nor_naoh = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>Weight of Sample (g)</mat-label>
@@ -51,6 +71,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'weight_sample1')"
         />
+        @if(weight_sample1){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="weight_sample1 = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <h6 style="width: 85%">Result</h6>
       <mat-form-field appearance="outline" class="calculator-form-field">
@@ -67,7 +97,9 @@
     <h6 style="width: 85%; padding-top: 5%">Input Values</h6>
     <mat-card-content class="calculator-content">
       <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Volume of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label>
+        <mat-label
+          >Volume of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label
+        >
         <input
           [(ngModel)]="vol_naso"
           matInput
@@ -75,9 +107,21 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'vol_naso')"
         />
+        @if(vol_naso){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="vol_naso = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Normality of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label>
+        <mat-label
+          >Normality of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label
+        >
         <input
           [(ngModel)]="nor_naso"
           matInput
@@ -85,6 +129,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'nor_naso')"
         />
+        @if(nor_naso){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="nor_naso = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>Weight of Sample (g)</mat-label>
@@ -96,6 +150,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'weight_sample2')"
         />
+        @if(weight_sample2){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="weight_sample2 = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <h6 style="width: 85%">Result</h6>
       <mat-form-field appearance="outline" class="calculator-form-field">
@@ -120,9 +184,21 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'tit_vol')"
         />
+        @if(tit_vol){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="tit_vol = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Normality of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label>
+        <mat-label
+          >Normality of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub></mat-label
+        >
         <input
           [(ngModel)]="nor_naso2"
           matInput
@@ -130,6 +206,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'nor_naso2')"
         />
+        @if(nor_naso2){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="nor_naso2 = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>Weight of Sample (g)</mat-label>
@@ -140,6 +226,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'sample_size')"
         />
+        @if(sample_size){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="sample_size = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <h6 style="width: 85%">Result</h6>
       <mat-form-field appearance="outline" class="calculator-form-field">

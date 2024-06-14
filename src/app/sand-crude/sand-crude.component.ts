@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-sand-crude',
@@ -17,7 +18,8 @@ import { RouterLink } from '@angular/router';
     CommonModule,
     FormsModule,
     MatCardModule,
-    RouterLink
+    RouterLink,
+    MatButtonModule
   ],
   templateUrl: './sand-crude.component.html',
   styleUrl: './sand-crude.component.css'

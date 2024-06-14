@@ -1,5 +1,14 @@
 <div style="display: flex; justify-content: center; align-items: center">
-  <mat-icon [routerLink]="'/home'" style="border-radius: 25%; border: black 3px solid; margin: 0px 5px; cursor: pointer">arrow_back</mat-icon>
+  <mat-icon
+    [routerLink]="'/home'"
+    style="
+      border-radius: 25%;
+      border: black 3px solid;
+      margin: 0px 5px;
+      cursor: pointer;
+    "
+    >arrow_back</mat-icon
+  >
   <h2 class="calculator-heading">Particulare Contaminants Calculator</h2>
 </div>
 
@@ -21,6 +30,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'w1_up')"
         />
+        @if(w1_up){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="w1_up = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>W2 (g)</mat-label>
@@ -33,6 +52,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'w2_up')"
         />
+        @if(w2_up){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="w2_up = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <h6 style="width: 85%">Filter Paper 'down'</h6>
       <mat-form-field appearance="outline" class="calculator-form-field">
@@ -46,6 +75,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'w1_down')"
         />
+        @if(w1_down){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="w1_down = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>W2 (g)</mat-label>
@@ -58,6 +97,16 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'w2_down')"
         />
+        @if(w2_down){
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="w2_down = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
       <h6 style="width: 85%">Volume</h6>
       <mat-form-field appearance="outline" class="calculator-form-field">
@@ -71,6 +120,11 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'vol')"
         />
+        @if(vol){
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="vol = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+        }
       </mat-form-field>
     </mat-card-content>
   </mat-card>

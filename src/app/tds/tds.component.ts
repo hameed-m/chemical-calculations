@@ -5,8 +5,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tds',
@@ -14,21 +15,23 @@ import { RouterLink } from '@angular/router';
   imports: [
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
     MatIconModule,
     CommonModule,
-    FormsModule,
     MatCardModule,
-    MatButton,
     RouterLink
   ],
   templateUrl: './tds.component.html',
   styleUrl: './tds.component.css',
 })
 export class TdsComponent {
+  
   w1: any = null;
   w2: any = null;
   vol: any = null;
-  VirtualKeyboardPolicy: any;
+
 
   get diff() {
     let diff = Math.abs(this.w1 - this.w2).toFixed(5);
@@ -50,6 +53,14 @@ export class TdsComponent {
       this.w1 = parseFloat(value.target.value).toFixed(5);
     } else if(vari == 'w2' && value.target.value != '') {
       this.w2 = parseFloat(value.target.value).toFixed(5);
+    }
+  }
+
+  validateWeights() {
+    if(this.w1 !== null && this.w2 !== null && this.w1 !== '' && this.w2 !== '') {
+      return this.w1 > this.w2;
+    } else {
+      return false;
     }
   }
 

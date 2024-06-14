@@ -20,6 +20,11 @@
           inputmode="numeric"
           (blur)="formatInput($event, 'doc')"
         />
+        @if(doc){
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="doc = ''">
+            <mat-icon>close</mat-icon>
+          </button>
+          }
       </mat-form-field>
       <mat-form-field appearance="outline" class="calculator-form-field">
         <mat-label>Density of Water 'fixed'</mat-label>
