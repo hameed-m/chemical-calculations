@@ -26,8 +26,9 @@
           matInput
           placeholder="Enter weight 1 up"
           required
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'w1_up')"
         />
         @if(w1_up){
@@ -48,8 +49,9 @@
           matInput
           placeholder="Enter weight 2 up"
           required
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'w2_up')"
         />
         @if(w2_up){
@@ -71,8 +73,9 @@
           matInput
           placeholder="Enter weight 1 down"
           required
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'w1_down')"
         />
         @if(w1_down){
@@ -93,8 +96,9 @@
           matInput
           placeholder="Enter weight 2 down"
           required
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'w2_down')"
         />
         @if(w2_down){
@@ -116,8 +120,9 @@
           matInput
           placeholder="Enter sample volume"
           required
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'vol')"
         />
         @if(vol){

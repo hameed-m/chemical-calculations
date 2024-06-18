@@ -25,8 +25,9 @@
           [(ngModel)]="vol_naoh"
           matInput
           placeholder="Enter volume of NaOH"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'vol_naoh')"
         />
         @if(vol_naoh){
@@ -46,8 +47,9 @@
           [(ngModel)]="nor_naoh"
           matInput
           placeholder="Enter normality of NaOH"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'nor_naoh')"
         />
         @if(nor_naoh){
@@ -67,8 +69,9 @@
           [(ngModel)]="weight_sample1"
           matInput
           placeholder="Enter sample volume"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'weight_sample1')"
         />
         @if(weight_sample1){
@@ -103,8 +106,9 @@
         <input
           [(ngModel)]="vol_naso"
           matInput
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'vol_naso')"
         />
         @if(vol_naso){
@@ -125,8 +129,9 @@
         <input
           [(ngModel)]="nor_naso"
           matInput
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'nor_naso')"
         />
         @if(nor_naso){
@@ -146,8 +151,9 @@
           [(ngModel)]="weight_sample2"
           matInput
           placeholder="Enter sample volume"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'weight_sample2')"
         />
         @if(weight_sample2){
@@ -180,8 +186,9 @@
         <input
           [(ngModel)]="tit_vol"
           matInput
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'tit_vol')"
         />
         @if(tit_vol){
@@ -202,8 +209,9 @@
         <input
           [(ngModel)]="nor_naso2"
           matInput
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'nor_naso2')"
         />
         @if(nor_naso2){
@@ -222,8 +230,9 @@
         <input
           [(ngModel)]="sample_size"
           matInput
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'sample_size')"
         />
         @if(sample_size){

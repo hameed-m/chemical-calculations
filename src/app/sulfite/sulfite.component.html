@@ -24,8 +24,9 @@
           [(ngModel)]="vol_titrant"
           matInput
           placeholder="Enter volume of Titrant"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'vol_titrant')"
         />
         @if(vol_titrant){
@@ -45,8 +46,9 @@
           [(ngModel)]="nor_ki"
           matInput
           placeholder="Enter normality of KI.KIO"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'nor_ki')"
         />
         @if(nor_ki){
@@ -66,8 +68,9 @@
           [(ngModel)]="sample_vol"
           matInput
           placeholder="Enter sample volume"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'sample_vol')"
         />
         @if(sample_vol){
@@ -88,8 +91,9 @@
           [(ngModel)]="sulfure"
           matInput
           placeholder="Enter sulfure (ppm)"
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'sulfure')"
         />
         @if(sulfure){

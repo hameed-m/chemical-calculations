@@ -43,8 +43,9 @@
           matInput
           placeholder="Enter weight 2"
           required
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'w2')"
         />
         @if(w2){
@@ -66,8 +67,9 @@
           matInput
           placeholder="Enter volume"
           required
-          type="text"
-          inputmode="numeric"
+          type="number"
+          inputmode="decimal"
+          pattern="[0-9]*\.?[0-9]*"
           (blur)="formatInput($event, 'vol')"
         />
         @if(vol){
