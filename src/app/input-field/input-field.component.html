@@ -1,0 +1,24 @@
+<mat-form-field appearance="outline" style="width: 100%;">
+  <mat-label>{{label}}</mat-label>
+  <input
+    [(ngModel)]="in"
+    matInput
+    required
+    type="number"
+    inputmode="decimal"
+    pattern="[0-9]*\.?[0-9]*"
+    (blur)="formatInput($event)"
+    (input)="updateInput($event)"
+  />
+  @if (in) {
+  <button
+    tabindex="-1"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="in = ''"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</mat-form-field>

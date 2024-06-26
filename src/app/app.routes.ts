@@ -6,7 +6,7 @@ import { PcComponent } from './pc/pc.component';
 import { SulfiteComponent } from './sulfite/sulfite.component';
 import { BulkChemicalsComponent } from './bulk-chemicals/bulk-chemicals.component';
 import { SandCrudeComponent } from './sand-crude/sand-crude.component';
-import { GeochemicalsComponent } from './geochemicals/geochemicals.component';
+import { FreeChlorineComponent } from './free-chlorine/free-chlorine.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
@@ -18,6 +18,6 @@ export const routes: Routes = [
     { path: 'sulfite', component: SulfiteComponent},
     { path: 'bulk-chemicals', component: BulkChemicalsComponent},
     { path: 'sand-crude', component: SandCrudeComponent},
-    { path: 'geochemicals', component: GeochemicalsComponent},
+    { path: 'free-chlorine', component: FreeChlorineComponent},
     { path: '**', redirectTo: ''}
 ];

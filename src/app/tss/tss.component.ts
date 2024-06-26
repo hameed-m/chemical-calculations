@@ -1,26 +1,18 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MatButton, MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { CalculatorHeaderComponent } from '../calculator-header/calculator-header.component';
+import { InputFieldComponent } from '../input-field/input-field.component';
+import { OutputFieldComponent } from '../output-field/output-field.component';
 
 
 @Component({
   selector: 'app-tss',
   standalone: true,
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    CommonModule,
-    FormsModule,
     MatCardModule,
-    MatButtonModule,
-    RouterLink
+    CalculatorHeaderComponent,
+    InputFieldComponent,
+    OutputFieldComponent
   ],
   templateUrl: './tss.component.html',
   styleUrl: './tss.component.css'
@@ -36,18 +28,7 @@ export class TssComponent {
   }
 
   get tss_ppm() {
-    let tss_ppm = parseFloat(((parseFloat(this.diff) * 1000000) / this.vol).toFixed(3));
-    return tss_ppm.toString()==='NaN' || tss_ppm.toString()==='Infinity' ? 0 : tss_ppm;
+    let tss_ppm = ((parseFloat(this.diff) * 1000000) / this.vol).toFixed(3);
+    return tss_ppm.toString()==='NaN' || tss_ppm.toString()==='Infinity' ? "0" : tss_ppm;
   }
-
-
-
-  formatInput(value: any, vari: any) {
-    if(vari == 'w1' && value.target.value != '') {
-      this.w1 = parseFloat(value.target.value).toFixed(5);
-    } else if(vari == 'w2' && value.target.value != '') {
-      this.w2 = parseFloat(value.target.value).toFixed(5);
-    }
-  }
-
 }

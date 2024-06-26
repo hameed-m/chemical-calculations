@@ -1,4 +1,4 @@
-<app-calculator-header [title]="'TDS'" />
+<app-calculator-header [title]="'Free Chlorine'" />
 
 <div class="calculator-container">
   <mat-card class="calculator-card">
@@ -7,20 +7,23 @@
     </mat-card-header>
     <mat-card-content class="calculator-content">
       <app-input-field
+        [label]="'Normaility of Titrant'"
+        [placeholder]="'Enter normaility of titrant'"
+        [(in)]="nor_tit"
         class="calculator-form-field"
-        label="W1 of the desh (g)"
-        [(in)]="w1"
-      ></app-input-field>
+      />
       <app-input-field
+        [label]="'Volume of titrant (ml)'"
+        [placeholder]="'Enter volume of titrant'"
+        [(in)]="vol_tit"
         class="calculator-form-field"
-        label="W2 of the desh (g)"
-        [(in)]="w2"
-      ></app-input-field>
+      />
       <app-input-field
+        [label]="'Volume of sample (ml)'"
+        [placeholder]="'Enter volume of sample'"
+        [(in)]="vol_sam"
         class="calculator-form-field"
-        label="Vol. of the sample (ml)"
-        [(in)]="vol"
-      ></app-input-field>
+      />
     </mat-card-content>
   </mat-card>
 
@@ -30,20 +33,10 @@
     </mat-card-header>
     <mat-card-content class="calculator-content">
       <app-output-field
+        [label]="'Free Chlorine (mg/L)'"
+        [out]="get_free_chlorine()"
         class="calculator-form-field"
-        label="Diff of W2-W1"
-        [out]="diff"
-      ></app-output-field>
-      <app-output-field
-        class="calculator-form-field"
-        label="TDS (ppm)"
-        [out]="tds_ppm"
-      ></app-output-field>
-      <app-output-field
-        class="calculator-form-field"
-        label="TDS (%)"
-        [out]="tds_percent"
-      ></app-output-field>
+      />
     </mat-card-content>
   </mat-card>
 </div>

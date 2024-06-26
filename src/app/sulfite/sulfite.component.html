@@ -1,16 +1,4 @@
-<div class="heading">
-  <mat-icon
-    [routerLink]="'/home'"
-    style="
-      border-radius: 25%;
-      border: black 3px solid;
-      margin: 0px 5px;
-      cursor: pointer;
-    "
-    >arrow_back</mat-icon
-  >
-  <h3 class="calculator-heading">Sulfite Calculator</h3>
-</div>
+<app-calculator-header [title]="'Sulfite'" />
 
 <div class="calculator-container">
   <mat-card class="calculator-card">
@@ -18,95 +6,27 @@
       <mat-card-title><h5>Input Values</h5></mat-card-title>
     </mat-card-header>
     <mat-card-content class="calculator-content">
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Volume of Titrant (ml)</mat-label>
-        <input
-          [(ngModel)]="vol_titrant"
-          matInput
-          placeholder="Enter volume of Titrant"
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'vol_titrant')"
-        />
-        @if(vol_titrant){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="vol_titrant = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Normality of KI.KIO</mat-label>
-        <input
-          [(ngModel)]="nor_ki"
-          matInput
-          placeholder="Enter normality of KI.KIO"
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'nor_ki')"
-        />
-        @if(nor_ki){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="nor_ki = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sample Volume (ml)</mat-label>
-        <input
-          [(ngModel)]="sample_vol"
-          matInput
-          placeholder="Enter sample volume"
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'sample_vol')"
-        />
-        @if(sample_vol){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="sample_vol = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
+      <app-input-field
+        class="calculator-form-field"
+        label="Volume of Titrant (ml)"
+        [(in)]="vol_titrant"
+      ></app-input-field>
+      <app-input-field
+        class="calculator-form-field"
+        label="Normality of KI.KIO"
+        [(in)]="nor_ki"
+      ></app-input-field>
+      <app-input-field
+        class="calculator-form-field"
+        label="Sample Volume (ml)"
+        [(in)]="sample_vol"
+      ></app-input-field>
       <h6 style="width: 85%">By ICP</h6>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sulfure (ppm)</mat-label>
-        <input
-          [(ngModel)]="sulfure"
-          matInput
-          placeholder="Enter sulfure (ppm)"
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'sulfure')"
-        />
-        @if(sulfure){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="sulfure = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
+      <app-input-field
+        class="calculator-form-field"
+        label="Sulfure (ppm)"
+        [(in)]="sulfure"
+      ></app-input-field>
     </mat-card-content>
   </mat-card>
 
@@ -115,26 +35,18 @@
       <mat-card-title><h5>Results</h5></mat-card-title>
     </mat-card-header>
     <mat-card-content class="calculator-content">
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sulfite (ppm)</mat-label>
-        <input
-          readonly
-          matInput
-          placeholder="Placeholder"
-          value="{{ sulfite }}"
-        />
-      </mat-form-field>
+      <app-output-field
+        class="calculator-form-field"
+        label="Sulfite (ppm)"
+        [out]="sulfite"
+      ></app-output-field>
 
       <h6 style="width: 85%">By ICP</h6>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sulfite</mat-label>
-        <input
-          readonly
-          matInput
-          placeholder="Placeholder"
-          value="{{ sulfite_icp }}"
-        />
-      </mat-form-field>
+      <app-output-field
+        class="calculator-form-field"
+        label="Sulfite"
+        [out]="sulfite_icp"
+      ></app-output-field>
     </mat-card-content>
   </mat-card>
 </div>

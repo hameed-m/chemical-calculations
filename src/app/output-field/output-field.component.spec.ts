@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeochemicalsComponent } from './geochemicals.component';
+import { OutputFieldComponent } from './output-field.component';
 
-describe('GeochemicalsComponent', () => {
-  let component: GeochemicalsComponent;
-  let fixture: ComponentFixture<GeochemicalsComponent>;
+describe('OutputFieldComponent', () => {
+  let component: OutputFieldComponent;
+  let fixture: ComponentFixture<OutputFieldComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GeochemicalsComponent]
+      imports: [OutputFieldComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GeochemicalsComponent);
+    fixture = TestBed.createComponent(OutputFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

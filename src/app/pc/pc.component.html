@@ -1,16 +1,4 @@
-<div class="heading">
-  <mat-icon
-    [routerLink]="'/home'"
-    style="
-      border-radius: 25%;
-      border: black 3px solid;
-      margin: 0px 5px;
-      cursor: pointer;
-    "
-    >arrow_back</mat-icon
-  >
-  <h3 class="calculator-heading">Particulare Contaminants Calculator</h3>
-</div>
+<app-calculator-header [title]="'Particulare Contaminants'" />
 
 <div class="calculator-container">
   <mat-card class="calculator-card">
@@ -19,118 +7,38 @@
     </mat-card-header>
     <h6 style="width: 85%">Filter Paper 'up'</h6>
     <mat-card-content class="calculator-content">
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>W1 (g)</mat-label>
-        <input
-          [(ngModel)]="w1_up"
-          matInput
-          placeholder="Enter weight 1 up"
-          required
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'w1_up')"
-        />
-        @if(w1_up){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="w1_up = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>W2 (g)</mat-label>
-        <input
-          [(ngModel)]="w2_up"
-          matInput
-          placeholder="Enter weight 2 up"
-          required
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'w2_up')"
-        />
-        @if(w2_up){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="w2_up = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'W1 (g)'"
+        [placeholder]="'Enter weight 1 up'"
+        [(in)]="w1_up"
+      />
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'W2 (g)'"
+        [placeholder]="'Enter weight 2 up'"
+        [(in)]="w2_up"
+      />
       <h6 style="width: 85%">Filter Paper 'down'</h6>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>W1 (g)</mat-label>
-        <input
-          [(ngModel)]="w1_down"
-          matInput
-          placeholder="Enter weight 1 down"
-          required
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'w1_down')"
-        />
-        @if(w1_down){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="w1_down = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>W2 (g)</mat-label>
-        <input
-          [(ngModel)]="w2_down"
-          matInput
-          placeholder="Enter weight 2 down"
-          required
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'w2_down')"
-        />
-        @if(w2_down){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="w2_down = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'W1 (g)'"
+        [placeholder]="'Enter weight 1 down'"
+        [(in)]="w1_down"
+      />
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'W2 (g)'"
+        [placeholder]="'Enter weight 2 down'"
+        [(in)]="w2_down"
+      />
       <h6 style="width: 85%">Volume</h6>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Vol. of the sample (ml)</mat-label>
-        <input
-          [(ngModel)]="vol"
-          matInput
-          placeholder="Enter sample volume"
-          required
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'vol')"
-        />
-        @if(vol){
-        <button tabindex="-1" matSuffix mat-icon-button aria-label="Clear" (click)="vol = ''">
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'Vol. of the sample (ml)'"
+        [placeholder]="'Enter sample volume'"
+        [(in)]="vol"
+      />
     </mat-card-content>
   </mat-card>
 
@@ -139,30 +47,21 @@
       <mat-card-title><h5>Results</h5></mat-card-title>
     </mat-card-header>
     <mat-card-content class="calculator-content">
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Diff 'up' (g)</mat-label>
-        <input
-          readonly
-          matInput
-          placeholder="Placeholder"
-          value="{{ diff_up }}"
-        />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Diff 'down' (g)</mat-label>
-        <input
-          readonly
-          matInput
-          placeholder="Placeholder"
-          value="{{ diff_down }}"
-        />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Particulare Contaminants (PPM)</mat-label>
-        <input readonly matInput placeholder="Placeholder" value="{{ pc }}" />
-      </mat-form-field>
+      <app-output-field
+        class="calculator-form-field"
+        [label]="'Diff \'up\' (g)'"
+        [out]="diff_up"
+      />
+      <app-output-field
+        class="calculator-form-field"
+        [label]="'Diff \'down\' (g)'"
+        [out]="diff_down"
+      />
+      <app-output-field
+        class="calculator-form-field"
+        [label]="'Particulare Contaminants (PPM)'"
+        [out]="pc"
+      />
     </mat-card-content>
   </mat-card>
 </div>

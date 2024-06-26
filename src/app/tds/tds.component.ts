@@ -1,27 +1,18 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MatButton, MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { CalculatorHeaderComponent } from '../calculator-header/calculator-header.component';
+import { InputFieldComponent } from '../input-field/input-field.component';
+import { OutputFieldComponent } from '../output-field/output-field.component';
+
 
 @Component({
   selector: 'app-tds',
   standalone: true,
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatIconModule,
-    CommonModule,
     MatCardModule,
-    RouterLink
+    CalculatorHeaderComponent,
+    InputFieldComponent,
+    OutputFieldComponent
   ],
   templateUrl: './tds.component.html',
   styleUrl: './tds.component.css',
@@ -45,15 +36,7 @@ export class TdsComponent {
 
   get tds_percent() {
     let tds_percent = parseFloat((this.tds_ppm / 1000).toFixed(2));
-    return tds_percent.toString()==='NaN' || tds_percent.toString()==='Infinity' ? 0 : tds_percent;
-  }
-
-  formatInput(value: any, vari: any) {
-    if(vari == 'w1' && value.target.value != '') {
-      this.w1 = parseFloat(value.target.value).toFixed(5);
-    } else if(vari == 'w2' && value.target.value != '') {
-      this.w2 = parseFloat(value.target.value).toFixed(5);
-    }
+    return tds_percent.toString()==='NaN' || tds_percent.toString()==='Infinity' ? "0" : tds_percent;
   }
 
   validateWeights() {

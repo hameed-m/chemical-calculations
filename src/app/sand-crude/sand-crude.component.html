@@ -1,16 +1,4 @@
-<div class="heading">
-  <mat-icon
-    [routerLink]="'/home'"
-    style="
-      border-radius: 25%;
-      border: black 3px solid;
-      margin: 0px 5px;
-      cursor: pointer;
-    "
-    >arrow_back</mat-icon
-  >
-  <h3 class="calculator-heading">Sand Crude Calculator</h3>
-</div>
+<app-calculator-header [title]="'Sand Crude'" />
 
 <div class="calculator-container">
   <mat-card class="calculator-card">
@@ -19,40 +7,19 @@
     </mat-card-header>
     <mat-card-content class="calculator-content">
       <h6 style="width: 85%">Input Values</h6>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Volume of Sands (ml)</mat-label>
-        <input
-          [(ngModel)]="vol_sand1"
-          matInput
-          placeholder="Enter volume of sand"
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'vol_sand1')"
-        />
-        @if(vol_sand1){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="vol_sand1 = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'Volume of Sand (ml)'"
+        [(in)]="vol_sand1"
+      />
 
       <h6 style="width: 85%">Result</h6>
 
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sand in Crude (PTB)</mat-label>
-        <input
-          readonly
-          matInput
-          placeholder="Placeholder"
-          value="{{ sand_crude1 }}"
-        />
-      </mat-form-field>
+      <app-output-field
+        class="calculator-form-field"
+        [label]="'Sand in Crude (PTB)'"
+        [out]="sand_crude1"
+      />
     </mat-card-content>
   </mat-card>
 
@@ -63,61 +30,23 @@
     <mat-card-content class="calculator-content">
       <h6 style="width: 85%">Input Values</h6>
 
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Volume of Sand (ml)</mat-label>
-        <input
-          [(ngModel)]="vol_sand2"
-          matInput
-          placeholder="Enter Volume of sand"
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'vol_sand2')"
-        />
-        @if(vol_sand2){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="vol_sand2 = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Volume of Sample (L)</mat-label>
-        <input
-          [(ngModel)]="vol_sample"
-          matInput
-          placeholder="Enter volume of sample"
-          type="number"
-          inputmode="decimal"
-          pattern="[0-9]*\.?[0-9]*"
-          (blur)="formatInput($event, 'vol_sample')"
-        />
-        @if(vol_sample){
-        <button tabindex="-1"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="vol_sample = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-        }
-      </mat-form-field>
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'Volume of Sand (ml)'"
+        [(in)]="vol_sand2"
+      />
+      <app-input-field
+        class="calculator-form-field"
+        [label]="'Volume of Sample (L)'"
+        [(in)]="vol_sample"
+      />
 
       <h6 style="width: 85%">Result</h6>
-      <mat-form-field appearance="outline" class="calculator-form-field">
-        <mat-label>Sand in Crude (PTB)</mat-label>
-        <input
-          readonly
-          matInput
-          placeholder="Placeholder"
-          value="{{ sand_crude2 }}"
-        />
-      </mat-form-field>
+      <app-output-field
+        class="calculator-form-field"
+        [label]="'Sand in Crude (PTB)'"
+        [out]="sand_crude2"
+      />
     </mat-card-content>
   </mat-card>
 </div>

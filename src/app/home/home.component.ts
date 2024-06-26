@@ -29,5 +29,6 @@ export class HomeComponent {
     { title: 'Sulfite', description: 'Card 2', link: '/sulfite', icon: "science" },
     { title: 'Bulk Chemicals', description: 'Card 3', link: '/bulk-chemicals', icon: "science" },
     { title: 'Sand in Crude', description: 'Card 3', link: '/sand-crude', icon: "science" },
+    { title: 'Free Chlorine', description: 'Card 3', link: '/free-chlorine', icon: "science" },
   ];
 }

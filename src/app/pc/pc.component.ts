@@ -1,26 +1,18 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MatButton, MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { CalculatorHeaderComponent } from '../calculator-header/calculator-header.component';
+import { InputFieldComponent } from '../input-field/input-field.component';
+import { OutputFieldComponent } from '../output-field/output-field.component';
 
 
 @Component({
   selector: 'app-pc',
   standalone: true,
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    CommonModule,
-    FormsModule,
     MatCardModule,
-    MatButtonModule,
-    RouterLink
+    CalculatorHeaderComponent,
+    InputFieldComponent,
+    OutputFieldComponent
   ],
   templateUrl: './pc.component.html',
   styleUrl: './pc.component.css',
@@ -47,21 +39,8 @@ export class PcComponent {
   }
 
   get pc() {
-    let pc = ((parseFloat(this.diff_up) - parseFloat(this.diff_down))*1000000) / parseFloat(this.vol);
-    return pc.toString() === 'NaN' || pc.toString() === 'Infinity' ? 0 : pc;
+    let pc = (((parseFloat(this.diff_up) - parseFloat(this.diff_down))*1000000) / parseFloat(this.vol)).toFixed(2);
+    return pc.toString() === 'NaN' || pc.toString() === 'Infinity' ? '0' : pc;
   }
 
-  formatInput(value: any, vari: any) {
-    if (vari == 'w1_up' && value.target.value != '') {
-      this.w1_up = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'w2_up' && value.target.value != '') {
-      this.w2_up = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'w1_up' && value.target.value != '') {
-      this.w1_down = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'w2_down' && value.target.value != '') {
-      this.w2_down = parseFloat(value.target.value).toFixed(5);
-    } else if (vari == 'vol' && value.target.value != '') {
-      this.vol = parseFloat(value.target.value).toFixed(1);
-    }
-  }
 }
