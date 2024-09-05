@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
-import { TssComponent } from './tss/tss.component';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
+import { MatListModule } from '@angular/material/list';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -15,8 +17,10 @@ import { MatIconModule } from '@angular/material/icon';
     RouterOutlet,
     CommonModule,
     MatCardModule,
-    TssComponent,
-    MatIconModule
+    MatIconModule,
+    BottomNavComponent,
+    MatListModule,
+    RouterLink,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

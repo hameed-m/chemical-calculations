@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+
 
 interface Card {
   title: string;
@@ -16,7 +17,7 @@ interface Card {
   selector: 'app-home',
   standalone: true,
   imports: [
-    RouterLink, CommonModule, MatCardModule, MatGridListModule, MatIconModule],
+    RouterLink, CommonModule, MatCardModule, MatGridListModule, MatIconModule, ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

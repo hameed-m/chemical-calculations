@@ -1,0 +1,15 @@
+<mat-tab-group headerPosition="below" [selectedIndex]="selectedIndex" (selectedTabChange)="onTabChange($event)">
+  <mat-tab label="Calculators"
+    ><ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">calculate</mat-icon>
+      Calculators
+    </ng-template>
+    </mat-tab
+  >
+  <mat-tab label="Report"
+    ><ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">description</mat-icon>
+      Report
+    </ng-template></mat-tab
+  >
+</mat-tab-group>

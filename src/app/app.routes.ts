@@ -8,6 +8,7 @@ import { BulkChemicalsComponent } from './bulk-chemicals/bulk-chemicals.componen
 import { SandCrudeComponent } from './sand-crude/sand-crude.component';
 import { FreeChlorineComponent } from './free-chlorine/free-chlorine.component';
 import { HomeComponent } from './home/home.component';
+import { ReportComponent } from './report/report.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -19,5 +20,6 @@ export const routes: Routes = [
     { path: 'bulk-chemicals', component: BulkChemicalsComponent},
     { path: 'sand-crude', component: SandCrudeComponent},
     { path: 'free-chlorine', component: FreeChlorineComponent},
+    { path: 'report', component: ReportComponent},
     { path: '**', redirectTo: ''}
 ];
