@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+
 
 @Component({
   selector: 'app-report',
   standalone: true,
-  imports: [CommonModule, MatCardModule,],
+  imports: [CommonModule, FormsModule, MatCardModule, MatInputModule],
   templateUrl: './report.component.html',
   styleUrl: './report.component.css',
 })
 export class ReportComponent {
+  searchTerm: string = '';
+  filteredItems() {
+    return this.data.filter(item => 
+      item.title.toLowerCase().includes(this.searchTerm.toLowerCase()) || item.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
   data = [
     // page 1
     {

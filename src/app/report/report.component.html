@@ -1,8 +1,14 @@
 <div class="heading">
   <h4 class="home-title">Preparation of Solutions and Common Reagents</h4>
 </div>
+<div class="filter-container">
+  <mat-form-field appearance="fill" style="width: 300px; margin: 10px">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search by title" [(ngModel)]="searchTerm" />
+  </mat-form-field>
+</div>
 <div class="card-container">
-  <mat-card *ngFor="let item of data" class="example-card">
+  <mat-card *ngFor="let item of filteredItems()" class="example-card">
     <mat-card-header>
       <mat-card-title>{{ item.title }}</mat-card-title>
     </mat-card-header>
