@@ -9,7 +9,13 @@
 </div>
 <div class="card-container">
   <mat-card *ngFor="let item of filteredItems()" class="example-card">
-    <mat-card-header>
+    <mat-card-header
+      style="
+        border-bottom: 2px solid #00595f87;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      "
+    >
       <mat-card-title>{{ item.title }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>

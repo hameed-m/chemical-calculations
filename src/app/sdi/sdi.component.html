@@ -1,0 +1,42 @@
+<app-calculator-header [title]="'SDI'" />
+
+<div class="calculator-container">
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <mat-card-title><h6>Input Values</h6></mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="calculator-content">
+      <app-input-field
+        [label]="'Initial Time to Fill Sample (min)'"
+        [placeholder]="'Enter initial time to fill sample'"
+        [(in)]="t0"
+        class="calculator-form-field"
+      />
+      <app-input-field
+        [label]="'Final Time to Fill Sample (min)'"
+        [placeholder]="'Enter final time to fill sample'"
+        [(in)]="tf"
+        class="calculator-form-field"
+      />
+      <app-input-field
+        [label]="'Time Between Tests (min)'"
+        [placeholder]="'Enter time between tests'"
+        [(in)]="t_period"
+        class="calculator-form-field"
+      />
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <mat-card-title><h6>Results</h6></mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="calculator-content">
+      <app-output-field
+        [label]="'SDI (Silt Density Index)'"
+        [out]="get_sdi()"
+        class="calculator-form-field"
+      />
+    </mat-card-content>
+  </mat-card>
+</div>
