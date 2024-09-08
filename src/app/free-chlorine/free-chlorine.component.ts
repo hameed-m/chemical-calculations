@@ -22,7 +22,7 @@ export class FreeChlorineComponent {
   vol_sam: number | null = null;
 
   get_free_chlorine() {
-    let free_chlorine = ((35.46 * this.nor_tit! * this.vol_tit!) / this.vol_sam!).toFixed(3);
+    let free_chlorine = ((35460 * this.nor_tit! * this.vol_tit!) / this.vol_sam!).toFixed(3);
     return free_chlorine;
   }
 }
