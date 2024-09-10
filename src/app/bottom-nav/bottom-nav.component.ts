@@ -20,7 +20,7 @@ export class BottomNavComponent {
     const selectedTab = localStorage.getItem('selectedTab');
     if (selectedTab) {
       this.selectedIndex = parseInt(selectedTab);
-      this.router.navigate([this.selectedIndex === 0 ? '/' : '/report']);
+      this.router.navigate([this.selectedIndex === 0 ? '/' : '/preparations']);
     }
 
   }
@@ -31,7 +31,7 @@ export class BottomNavComponent {
     if (event.index === 0) {
       this.router.navigate(['/']);
     } else if (event.index === 1) {
-      this.router.navigate(['/report']);
+      this.router.navigate(['/preparations']);
     }
   }
 }

@@ -22,6 +22,6 @@ export const routes: Routes = [
     { path: 'sand-crude', component: SandCrudeComponent},
     { path: 'free-chlorine', component: FreeChlorineComponent},
     { path: 'sdi', component: SdiComponent},
-    { path: 'report', component: ReportComponent},
+    { path: 'preparations', component: ReportComponent},
     { path: '**', redirectTo: ''}
 ];
