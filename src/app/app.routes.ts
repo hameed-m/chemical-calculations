@@ -8,6 +8,7 @@ import { BulkChemicalsComponent } from './bulk-chemicals/bulk-chemicals.componen
 import { SandCrudeComponent } from './sand-crude/sand-crude.component';
 import { FreeChlorineComponent } from './free-chlorine/free-chlorine.component';
 import { SdiComponent } from './sdi/sdi.component';
+import { DewPointComponent } from './dew-point/dew-point.component';
 import { HomeComponent } from './home/home.component';
 import { ReportComponent } from './report/report.component';
 
@@ -22,6 +23,7 @@ export const routes: Routes = [
     { path: 'sand-crude', component: SandCrudeComponent},
     { path: 'free-chlorine', component: FreeChlorineComponent},
     { path: 'sdi', component: SdiComponent},
+    { path: 'dew-point', component: DewPointComponent},
     { path: 'preparations', component: ReportComponent},
     { path: '**', redirectTo: ''}
 ];

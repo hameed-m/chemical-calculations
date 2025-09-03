@@ -1,0 +1,36 @@
+<app-calculator-header [title]="'DEW Point'" />
+
+<div class="calculator-container">
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <mat-card-title><h6>Input Values</h6></mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="calculator-content">
+      <app-input-field
+        [label]="'Pressure (psi)'"
+        [placeholder]="'Enter pressure'"
+        [(in)]="pressure"
+        class="calculator-form-field"
+      />
+      <app-input-field
+        [label]="'Result (IBS/MMSCF)'"
+        [placeholder]="'Enter the result'"
+        [(in)]="result"
+        class="calculator-form-field"
+      />
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <mat-card-title><h6>Results</h6></mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="calculator-content">
+      <app-output-field
+        [label]="'DEW Point Result (°C)'"
+        [out]="dew_point_result"
+        class="calculator-form-field"
+      />
+    </mat-card-content>
+  </mat-card>
+</div>
