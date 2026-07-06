@@ -35,7 +35,7 @@ export class TdsComponent {
   }
 
   get tds_percent() {
-    let tds_percent = parseFloat((this.tds_ppm / 1000).toFixed(2));
+    let tds_percent = parseFloat((this.tds_ppm / 10000).toFixed(2));
     return tds_percent.toString()==='NaN' || tds_percent.toString()==='Infinity' ? "0" : tds_percent;
   }
 
